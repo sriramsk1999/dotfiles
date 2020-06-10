@@ -1,0 +1,336 @@
+;==========================================================
+;
+;
+;   ██████╗  ██████╗ ██╗  ██╗   ██╗██████╗  █████╗ ██████╗
+;   ██╔══██╗██╔═══██╗██║  ╚██╗ ██╔╝██╔══██╗██╔══██╗██╔══██╗
+;   ██████╔╝██║   ██║██║   ╚████╔╝ ██████╔╝███████║██████╔╝
+;   ██╔═══╝ ██║   ██║██║    ╚██╔╝  ██╔══██╗██╔══██║██╔══██╗
+;   ██║     ╚██████╔╝███████╗██║   ██████╔╝██║  ██║██║  ██║
+;   ╚═╝      ╚═════╝ ╚══════╝╚═╝   ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝
+;
+;
+;   To learn more about how to configure Polybar
+;   go to https://github.com/polybar/polybar
+;
+;   Made by sriramsk1999
+;
+;==========================================================
+
+[colors]
+nord0 = #2e3440
+nord1 = #3b4252
+nord2 = #434c5e
+nord3 = #4c566a
+nord4 = #d8dee9
+nord5 = #e5e9f0
+nord6 = #eceff4
+nord7 = #8fbcbb
+nord8 = #88c0d0
+nord9 = #81a1c1
+nord10 = #5e81ac
+nord11 = #bf616a 
+nord12 = #d08770
+nord13 = #ebcb8b
+nord14 = #a3be8c
+nord15 = #b48ead
+
+nord1mod = #d03b4252
+nord10mod = #d05e81ac
+
+[module/xwindow]
+type = internal/xwindow
+label = %title:0:60:...%
+label-empty = 󰞇
+
+[module/i3]
+type = internal/i3
+format = <label-state>
+index-sort = true
+
+; focused = Active workspace on focused monitor
+label-focused = 󰪥
+label-focused-background = ${colors.nord3}
+label-focused-padding = 1.5
+
+; unfocused = Inactive workspace on any monitor
+label-unfocused = 󰝦
+label-unfocused-padding = 1.5
+
+; visible = Active workspace on unfocused monitor
+label-visible = 󰝦
+label-visible-foreground = ${colors.nord7}
+label-visible-background = ${self.label-focused-background}
+label-visible-padding = ${self.label-focused-padding}
+
+; urgent = Workspace with urgency hint set
+label-urgent = 󰝦
+label-urgent-background = ${colors.nord11}
+label-urgent-padding = 1.5
+
+
+[module/wlan]
+type = internal/network
+interface = wlp59s0
+interval = 3.0
+
+format-connected = <label-connected>
+label-connected = "     %essid% "
+label-disconnected = "    Not connected   "
+
+format-connected-background = ${colors.nord14}
+format-disconnected-background = ${colors.nord14}
+
+[module/date]
+type = internal/date
+interval = 5
+
+date = "%d/%m"
+time = %H:%M
+
+format-prefix = 󰥔
+label = %time% %date% 
+
+[module/pulseaudio]
+type = internal/pulseaudio
+
+label-volume-background = ${colors.nord13}
+format-volume = <label-volume>
+label-volume = "󰕾 %percentage%%  "
+label-volume-foreground = ${colors.nord0}
+
+label-muted = "󰝟  "
+label-muted-background = ${colors.nord13}
+label-muted-foreground = ${colors.nord0}
+
+[module/popup-calendar]
+type = custom/script
+exec = ~/.config/polybar/popup-calendar.sh
+interval = 5
+click-left = ~/.config/polybar/popup-calendar.sh --popup &
+
+[module/pacman-glyph]
+type = custom/text
+content-font = 3
+content-background = ${colors.nord12}
+content = " C:"
+
+[module/rounded-right1]
+type = custom/text
+content-foreground = ${colors.nord12}
+content = "  "
+
+[module/rounded-right2]
+type = custom/text
+content-foreground = ${colors.nord13}
+content-background = ${colors.nord12}
+content = "  "
+
+[module/rounded-right3]
+type = custom/text
+content-foreground = ${colors.nord14}
+content-background = ${colors.nord13}
+content = "  "
+
+[module/rounded-right4]
+type = custom/text
+content-foreground = ${colors.nord15}
+content-background = ${colors.nord14}
+content = " "
+
+[module/rounded-right5]
+type = custom/text
+content-foreground = ${colors.nord15}
+content-background = ${colors.nord14}
+content = ""
+
+[module/power]
+type = custom/text
+content-foreground = ${colors.nord0}
+content-background = ${colors.nord15}
+content = "󰐥 "
+click-left = qdbus org.kde.ksmserver /KSMServer logout 1 0 0
+
+[module/updates-pacman-aurhelper]
+type = custom/script
+format-background = ${colors.nord12}
+exec = ~/.config/polybar/updates-pacman-aurhelper.sh
+interval = 600
+
+[module/rounded-left]
+type = custom/text
+content-background = ${colors.nord0}
+content-foreground = ${colors.nord4}
+content = ""
+
+[module/rofi]
+content-background = ${colors.nord4}
+content-foreground = ${colors.nord0}
+type = custom/text
+content = 󰕰
+content-padding = 1.5
+click-left = rofi -show drun -theme themes/appsmenu.rasi
+
+[module/kitty]
+content-background = ${colors.nord4}
+content-foreground = ${colors.nord0}
+type = custom/text
+content = 󰞷
+content-padding = 1.5
+click-left = kitty
+
+[module/firefox]
+content-background = ${colors.nord4}
+content-foreground = ${colors.nord0}
+type = custom/text
+content = 󰈹
+content-padding = 1.5
+click-left = firefox
+
+[module/emacs]
+content-background = ${colors.nord4}
+content-foreground = ${colors.nord0}
+type = custom/text
+content = 󱃠
+content-padding = 1.5
+click-left = emacs
+
+[module/vscode]
+content-background = ${colors.nord4}
+content-foreground = ${colors.nord0}
+type = custom/text
+content = 󰨞
+content-padding = 1.5
+click-left = code
+
+[module/settings]
+content-background = ${colors.nord4}
+content-foreground = ${colors.nord0}
+type = custom/text
+content = 󰒓
+content-padding = 1.5
+click-left = systemsettings5
+
+[module/battery]
+type = internal/battery
+battery = BAT0
+adapter = AC
+full-at = 98
+
+format-charging = "<animation-charging><label-charging>"
+format-discharging = "<animation-discharging><label-discharging>"
+
+label-full-background = ${colors.nord13}
+label-charging-background = ${colors.nord13}
+label-discharging-background = ${colors.nord13}
+
+format-full-prefix = "󰁹"
+format-full-prefix-foreground = ${colors.nord0}
+format-full-prefix-background = ${colors.nord13}
+
+ramp-capacity-0 = 󰁺
+ramp-capacity-1 = 󰁼
+ramp-capacity-2 = 󰁾
+ramp-capacity-3 = 󰂀
+ramp-capacity-4 = 󰁹
+ramp-capacity-foreground = ${colors.nord0}
+ramp-capacity-background = ${colors.nord13}
+
+animation-charging-0 = 󰁺
+animation-charging-1 = 󰁼
+animation-charging-2 = 󰁾
+animation-charging-3 = 󰂀
+animation-charging-4 = 󰁹
+animation-charging-foreground = ${colors.nord0}
+animation-charging-background = ${colors.nord13}
+animation-charging-framerate = 750
+
+animation-discharging-0 = 󰁹
+animation-discharging-1 = 󰁹
+animation-discharging-2 = 󰁹
+animation-discharging-3 = 󰁹
+animation-discharging-4 = 󰁹
+animation-discharging-foreground = ${colors.nord0}
+animation-discharging-background = ${colors.nord13}
+animation-discharging-framerate = 750
+
+[bar/leftpanel]
+width = 28%
+height = 40
+
+offset-x = 0.5%
+offset-y = 0%
+radius = 20.0
+fixed-center = true
+override-redirect = true
+wm-restack = i3
+
+bottom = false
+
+modules-left = i3
+modules-right = rounded-left rofi kitty firefox emacs vscode settings
+
+background = ${colors.nord1mod}
+foreground = ${colors.nord6}
+
+font-0 = "Inconsolata Nerd Font:style=Regular:size=22;3"
+font-1 = "Material Design Icons:style=Regular:size=24;6"
+
+cursor-click = pointer
+cursor-scroll = ns-resize
+
+
+[bar/centerpanel]
+width = 30%
+height = 40
+
+offset-x = 35%
+offset-y = 0%
+radius = 20.0
+fixed-center = true
+override-redirect = true
+wm-restack = i3
+
+bottom = false
+
+modules-center = xwindow
+
+background = ${colors.nord10mod}
+foreground = ${colors.nord6}
+
+font-0 = "Inconsolata Nerd Font:style=Regular:size=22;3"
+font-1 = "Material Design Icons:style=Regular:size=28;8"
+
+
+[bar/rightpanel]
+width = 28%
+height = 40
+
+offset-x = 71.5%
+offset-y = 0%
+radius = 20.0
+fixed-center = true
+override-redirect = true
+wm-restack = i3
+
+bottom = false
+modules-left = popup-calendar rounded-right1 pacman-glyph updates-pacman-aurhelper rounded-right2 pulseaudio battery rounded-right3 wlan rounded-right4 power rounded-right5 
+modules-right =  
+
+background = ${colors.nord11}
+foreground = ${colors.nord0}
+
+padding = 3
+module-margin = 0
+
+cursor-click = pointer
+
+tray-position = right
+tray-background = ${colors.nord14}
+tray-foreground = ${colors.nord0}
+tray-maxsize = 1000
+tray-detached = true
+tray-offset-x = -325 
+
+font-0 = "Inconsolata Nerd Font:style=Regular:size=22;3"
+font-1 = "Material Design Icons:style=Regular:size=28;8"
+font-2 = "FattiPattiFLF:style=Regular:size=22;3"
