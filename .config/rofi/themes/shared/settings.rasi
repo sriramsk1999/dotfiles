@@ -1,0 +1,11 @@
+/**
+ * Allows to change the settings of every menu simply by editing this file
+ */
+@import "colorschemes/nord.rasi"
+@import "resolutions/3840x2160.rasi"
+
+#window {
+  width: 60%;
+  height: 60%;
+}
+
