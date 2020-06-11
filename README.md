@@ -9,19 +9,20 @@ What my system looks like:
 
 Overview of programs used: 
 
-* OS : [Arch Linux](https://www.archlinux.org/)
-* WM : [i3-gaps](https://github.com/Airblader/i3)
-* DE : [KDE Plasma](https://kde.org/plasma-desktop)
-* Shell : zsh (with [oh-my-zsh](https://github.com/ohmyzsh/ohmyzsh) and [powerlevel10k](https://github.com/romkatv/powerlevel10k))
-* Terminal : [kitty](https://github.com/kovidgoyal/kitty/)
-* Editor : [Doom Emacs](https://github.com/hlissner/doom-emacs/)
-* Status Bar : [polybar](https://polybar.github.io)
-* PDF Reader : [zathura](https://pwmt.org/projects/zathura/)
-* File Manager : [ranger](https://ranger.github.io/)
-* Browser : Firefox with the [Tabliss](https://tabliss.io/)
-* Application Launcher : [rofi](https://github.com/davatorium/rofi)
-* Wallpaper : [Louis Coyle Lakeside](https://dribbble.com/shots/6498887-Lakeside-2019)
-* Colorscheme : [Nord](https://www.nordtheme.com/)
+* **OS** : [Arch Linux](https://www.archlinux.org/)
+* **WM** : [i3-gaps](https://github.com/Airblader/i3)
+* **DE** : [KDE Plasma](https://kde.org/plasma-desktop)
+* **Shell** : zsh (with [oh-my-zsh](https://github.com/ohmyzsh/ohmyzsh) and [powerlevel10k](https://github.com/romkatv/powerlevel10k))
+* **Terminal** : [kitty](https://github.com/kovidgoyal/kitty/)
+* **Editor** : [Doom Emacs](https://github.com/hlissner/doom-emacs/)
+* **Status Bar** : [polybar](https://polybar.github.io)
+* **PDF Reader** : [zathura](https://pwmt.org/projects/zathura/)
+* **File Manager** : [ranger](https://ranger.github.io/)
+* **Browser** : Firefox with the [Tabliss](https://tabliss.io/)
+* **Application Launcher** : [rofi](https://github.com/davatorium/rofi)
+* **Wallpaper** : [Louis Coyle Lakeside](https://dribbble.com/shots/6498887-Lakeside-2019)
+* **Colorscheme** : [Nord](https://www.nordtheme.com/)
+* **Fonts** : Material Design, Inconsolata and of course, FattiPattiFLF
 
 A non-exhaustive list of the various sources I used to customize my setup. Massive props to these people! 🎉
 
@@ -38,3 +39,5 @@ A non-exhaustive list of the various sources I used to customize my setup. Massi
 [Useful scripts to enhance Polybar](https://github.com/polybar/polybar-scripts)
 
 [Managing dotfiles elegantly](https://www.atlassian.com/git/tutorials/dotfiles)
+
+[Font for the pacman in the top-right](https://www.ffonts.net/FattiPattiFLF-Bold.font)
