@@ -2,6 +2,8 @@
 
 Dotfiles are plain text configuration files on Unix systems for various programs like the shell, the window manager etc. They are called "dotfiles" as they typically are named with a leading . making them hidden files on your system.
 
+What my system looks like:
+
 ![alt text](Pictures/screenshot.png)
 
 
