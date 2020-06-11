@@ -104,6 +104,8 @@ export PATH=~/.emacs.d/bin:/home/sriramsk/.local/bin:$PATH
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
+# Managing dotfiles
+alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 
 # IBus
 export GTK_IM_MODULE=ibus

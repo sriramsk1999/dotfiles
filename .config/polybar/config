@@ -44,7 +44,7 @@ label-empty = 󰞇
 
 [module/i3]
 type = internal/i3
-format = <label-state>
+format = <label-state> <label-mode>
 index-sort = true
 
 ; focused = Active workspace on focused monitor
@@ -67,6 +67,10 @@ label-urgent = 󰝦
 label-urgent-background = ${colors.nord11}
 label-urgent-padding = 1.5
 
+label-mode = %mode%
+label-mode-foreground = ${colors.nord6}
+label-mode-background = ${colors.nord1mod}
+
 
 [module/wlan]
 type = internal/network
@@ -74,8 +78,11 @@ interface = wlp59s0
 interval = 3.0
 
 format-connected = <label-connected>
-label-connected = "     %essid% "
-label-disconnected = "    Not connected   "
+label-connected = "%essid:19%"
+label-connected-padding-right = 2
+label-disconnected-padding-right = 2
+label-disconnected-maxlen = 19
+label-disconnected = "      Not connected"
 
 format-connected-background = ${colors.nord14}
 format-disconnected-background = ${colors.nord14}
@@ -95,10 +102,10 @@ type = internal/pulseaudio
 
 label-volume-background = ${colors.nord13}
 format-volume = <label-volume>
-label-volume = "󰕾 %percentage%%  "
+label-volume = "󰕾 %percentage:3:3%% "
 label-volume-foreground = ${colors.nord0}
 
-label-muted = "󰝟  "
+label-muted = "󰝟      "
 label-muted-background = ${colors.nord13}
 label-muted-foreground = ${colors.nord0}
 
@@ -135,7 +142,7 @@ content = "  "
 type = custom/text
 content-foreground = ${colors.nord15}
 content-background = ${colors.nord14}
-content = " "
+content = ""
 
 [module/rounded-right5]
 type = custom/text
@@ -147,13 +154,14 @@ content = ""
 type = custom/text
 content-foreground = ${colors.nord0}
 content-background = ${colors.nord15}
-content = "󰐥 "
+content = "󰐥"
 click-left = qdbus org.kde.ksmserver /KSMServer logout 1 0 0
 
 [module/updates-pacman-aurhelper]
 type = custom/script
 format-background = ${colors.nord12}
 exec = ~/.config/polybar/updates-pacman-aurhelper.sh
+label = %output:4:4%
 interval = 600
 
 [module/rounded-left]
@@ -176,7 +184,7 @@ content-foreground = ${colors.nord0}
 type = custom/text
 content = 󰞷
 content-padding = 1.5
-click-left = kitty
+click-left = kitty &
 
 [module/firefox]
 content-background = ${colors.nord4}
@@ -192,7 +200,7 @@ content-foreground = ${colors.nord0}
 type = custom/text
 content = 󱃠
 content-padding = 1.5
-click-left = emacs
+click-left = emacs &
 
 [module/vscode]
 content-background = ${colors.nord4}
@@ -208,7 +216,7 @@ content-foreground = ${colors.nord0}
 type = custom/text
 content = 󰒓
 content-padding = 1.5
-click-left = systemsettings5
+click-left = systemsettings5 &
 
 [module/battery]
 type = internal/battery
@@ -221,6 +229,7 @@ format-discharging = "<animation-discharging><label-discharging>"
 
 label-full-background = ${colors.nord13}
 label-charging-background = ${colors.nord13}
+label-charging  = %percentage:3:3%% 
 label-discharging-background = ${colors.nord13}
 
 format-full-prefix = "󰁹"
@@ -313,13 +322,13 @@ override-redirect = true
 wm-restack = i3
 
 bottom = false
-modules-left = popup-calendar rounded-right1 pacman-glyph updates-pacman-aurhelper rounded-right2 pulseaudio battery rounded-right3 wlan rounded-right4 power rounded-right5 
-modules-right =  
+modules-left = popup-calendar rounded-right1 pacman-glyph updates-pacman-aurhelper rounded-right2 pulseaudio battery rounded-right3 wlan rounded-right4 power rounded-right5  
+modules-center =  
 
 background = ${colors.nord11}
 foreground = ${colors.nord0}
 
-padding = 3
+padding-left = 3
 module-margin = 0
 
 cursor-click = pointer
