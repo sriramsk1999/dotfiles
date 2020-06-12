@@ -20,6 +20,7 @@ Overview of programs used:
 * **File Manager** : [ranger](https://ranger.github.io/)
 * **Browser** : Firefox with the [Tabliss](https://tabliss.io/)
 * **Application Launcher** : [rofi](https://github.com/davatorium/rofi)
+* **Compositor** : [picom](https://github.com/yshui/picom) using the [picom-tryone-git branch]()https://aur.archlinux.org/packages/picom-tryone-git/
 * **Wallpaper** : [Louis Coyle Lakeside](https://dribbble.com/shots/6498887-Lakeside-2019)
 * **Colorscheme** : [Nord](https://www.nordtheme.com/)
 * **Fonts** : Material Design, Inconsolata and of course, FattiPattiFLF
