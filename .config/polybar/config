@@ -229,7 +229,8 @@ format-discharging = "<animation-discharging><label-discharging>"
 
 label-full-background = ${colors.nord13}
 label-charging-background = ${colors.nord13}
-label-charging  = %percentage:3:3%% 
+label-charging  = %percentage:3:3%%
+label-discharging  = %percentage:3:3%%
 label-discharging-background = ${colors.nord13}
 
 format-full-prefix = "󰁹"
