@@ -7,8 +7,8 @@ killall -q polybar
 
 # Launch bars
 echo "---" | tee -a /tmp/i3plasma.log
+polybar rightpanel >>/tmp/i3plasma.log 2>&1 &
 polybar leftpanel >>/tmp/i3plasma.log 2>&1 &
 polybar centerpanel >>/tmp/i3plasma.log 2>&1 &
-polybar rightpanel >>/tmp/i3plasma.log 2>&1 &
 
 echo "Bar launched..."
