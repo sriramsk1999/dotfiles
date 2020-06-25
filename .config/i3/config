@@ -59,6 +59,7 @@ bindsym Mod1+d exec rofi -show drun -theme themes/appsmenu.rasi
 bindsym Mod1+q exec emacs
 bindsym Mod1+w exec firefox
 bindsym Mod1+e exec kitty -e ranger
+bindsym Mod1+Shift+e exec emoji-keyboard -s
 
 # change focus
 bindsym Mod1+$left focus left
@@ -95,8 +96,8 @@ bindsym Mod1+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
 #bindsym Mod1+s layout stacking
-#bindsym Mod1+w layout tabbed
-#bindsym Mod1+e layout toggle split
+bindsym Mod1+b layout tabbed
+bindsym Mod1+s layout toggle split 
 
 # toggle tiling / floating
 bindsym Mod1+Shift+space floating toggle

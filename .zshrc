@@ -113,6 +113,7 @@ export PATH=~/.emacs.d/bin:/home/sriramsk/.local/bin:$PATH
 
 # Managing dotfiles
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+alias enw='emacs -nw'
 
 # IBus
 export GTK_IM_MODULE=ibus
