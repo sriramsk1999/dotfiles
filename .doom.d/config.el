@@ -36,9 +36,6 @@
 
 ;; Use treemacs' default theme
 (setq doom-themes-treemacs-theme "Default")
-;;(after! treemacs
-;;  (treemacs-load-theme "Default"))
-
 
 ;; Here are some additional functions/macros that could help you configure Doom:
 ;;
