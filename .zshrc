@@ -113,10 +113,6 @@ export PATH=~/.emacs.d/bin:/home/sriramsk/.local/bin:$PATH
 
 # Managing dotfiles
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
-alias enw='emacs -nw'
 
-# IBus
-export GTK_IM_MODULE=ibus
-export XMODIFIERS=@im=ibus
-export QT_IM_MODULE=ibus
-ibus-daemon -drx
+# Easier access to emacs on tty
+alias enw='emacs -nw'
