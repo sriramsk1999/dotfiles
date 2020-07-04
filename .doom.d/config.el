@@ -37,6 +37,33 @@
 ;; Use treemacs' default theme
 (setq doom-themes-treemacs-theme "Default")
 
+;; Set up python dev environment inside virtualenv (if it exists)
+;; Configures flycheck and anaconda-mode.
+(defun setup-python-dev-env ()
+  (when (file-directory-p "env")
+    (setq python-env "env/bin/python")
+    (setq flycheck-python-pylint-executable python-env)
+    (pythonic-activate python-env)))
+
+;; Hook to setup python environment
+(add-hook 'python-mode-hook 'setup-python-dev-env)
+
+;; Increase window divider width from 1 to 10 to easily resize windows
+(setq window-divider-default-right-width 10)
+
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(package-selected-packages (quote (pyvenv))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
+
 ;; Here are some additional functions/macros that could help you configure Doom:
 ;;
 ;; - `load!' for loading external *.el files relative to this one
