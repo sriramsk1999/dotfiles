@@ -59,7 +59,7 @@ bindsym Mod4+d exec rofi -show drun -theme themes/appsmenu.rasi
 bindsym Mod4+q exec --no-startup-id emacsclient -c &
 bindsym Mod4+w exec firefox
 bindsym Mod4+e exec kitty -e ranger
-bindsym Mod4+Shift+e exec emoji-keyboard -s
+bindsym Mod4+Shift+m exec --no-startup-id emoji-keyboard -s
 
 # change focus
 bindsym Mod4+$left focus left

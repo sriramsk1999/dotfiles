@@ -51,6 +51,10 @@
 ;; Increase window divider width from 1 to 10 to easily resize windows
 (setq window-divider-default-right-width 10)
 
+;; Centaur tabs
+(setq centaur-tabs-style "box"
+      centaur-tabs-modified-marker "⏺")
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
