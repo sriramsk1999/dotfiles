@@ -34,9 +34,6 @@
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
 (setq display-line-numbers-type t)
 
-;; Use treemacs' default theme
-(setq doom-themes-treemacs-theme "Default")
-
 ;; Set up python dev environment inside virtualenv (if it exists)
 ;; Configures flycheck and anaconda-mode.
 (defun setup-python-dev-env ()
@@ -60,7 +57,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(package-selected-packages (quote (pyvenv))))
+ '(package-selected-packages (quote (olivetti pyvenv))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

@@ -232,12 +232,12 @@ no_focus [class="plasmashell" window_type="notification"]
 
 for_window [title="Desktop — Plasma"] kill; floating enable; border none
 
-# Launch polybar
-exec_always --no-startup-id $HOME/.config/polybar/launch.sh
-
 # Set Wallpaper
 #exec --no-startup-id feh --bg-scale /usr/share/wallpapers/ColdRipple/contents/images/2560x1600.jpg
 exec --no-startup-id feh --bg-fill ~/Pictures/lakeside_2019_midnight.png
+
+# Launch polybar
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 # Disable titlebar
 for_window [class=".*"] border pixel 0

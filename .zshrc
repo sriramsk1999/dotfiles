@@ -105,14 +105,22 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-export EDITOR=emacs
-export PATH=~/.emacs.d/bin:/home/sriramsk/.local/bin:$PATH
-
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
 # Managing dotfiles
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 
 # Easier access to emacs on tty
 alias enw='emacs -nw'
+
+# Alias sudo to make 'sudo enw' and similar commands work
+alias sudo='sudo '
+
+# Easy package update
+alias pacsyu='sudo pacman -Syu'
+
+
+export EDITOR=emacs
+export PATH=~/.emacs.d/bin:/home/sriramsk/.local/bin:/opt/flutter/bin:$PATH
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
