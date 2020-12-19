@@ -117,9 +117,10 @@ alias sudo='sudo '
 # Easy package update
 alias pacsyu='sudo pacman -Syu'
 
-
+# Exports
 export EDITOR=emacs
-export PATH=~/.emacs.d/bin:/home/sriramsk/.local/bin:/opt/flutter/bin:$PATH
+export PATH=~/.emacs.d/bin:/home/sriramsk/.local/bin:/opt/flutter/bin:~/Android/Sdk/platform-tools:$PATH
+export LD_LIBRARY_PATH=/usr/local/lib/
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
