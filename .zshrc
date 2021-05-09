@@ -109,7 +109,7 @@ source $ZSH/oh-my-zsh.sh
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 
 # Easier access to emacs on tty
-alias enw='emacs -nw'
+alias enw='TERM=xterm-direct emacsclient -nw'
 
 # Alias sudo to make 'sudo enw' and similar commands work
 alias sudo='sudo '
@@ -118,7 +118,7 @@ alias sudo='sudo '
 alias pacsyu='sudo pacman -Syu'
 
 # Exports
-export EDITOR=emacs
+export EDITOR='emacsclient -c'
 export PATH=~/.emacs.d/bin:/home/sriramsk/.local/bin:/opt/flutter/bin:~/Android/Sdk/platform-tools:$PATH
 export LD_LIBRARY_PATH=/usr/local/lib/
 
