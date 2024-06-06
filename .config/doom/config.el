@@ -140,6 +140,13 @@ Examples:
 ;; ((nil . ((pyvenv-activate . "~/miniconda3/envs/trackman"))))
 ;;######################################################
 
+(use-package! xclip
+  :config
+  (setq xclip-program "wl-copy")
+  (setq xclip-select-enable-clipboard t)
+  (setq xclip-mode t)
+  (setq xclip-method (quote wl-copy)))
+
 ;; Whenever you reconfigure a package, make sure to wrap your config in an
 ;; `after!' block, otherwise Doom's defaults may override your settings. E.g.
 ;;
