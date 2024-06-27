@@ -140,12 +140,26 @@ Examples:
 ;; ((nil . ((pyvenv-activate . "~/miniconda3/envs/trackman"))))
 ;;######################################################
 
+;; Misc Configuration
+;;######################################################
+
 (use-package! xclip
   :config
   (setq xclip-program "wl-copy")
   (setq xclip-select-enable-clipboard t)
   (setq xclip-mode t)
   (setq xclip-method (quote wl-copy)))
+
+;; Bind save to Ctrl-s
+(map! :desc "save buffer"  "C-s" #'save-buffer)
+
+;; Open emacsclient in same workspace instead of creating new workspace every time
+(after! persp-mode
+  (setq persp-emacsclient-init-frame-behaviour-override
+        `(+workspace-current-name))
+  )
+
+;;######################################################
 
 ;; Whenever you reconfigure a package, make sure to wrap your config in an
 ;; `after!' block, otherwise Doom's defaults may override your settings. E.g.
