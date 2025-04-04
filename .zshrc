@@ -182,4 +182,5 @@ alias gcm='git commit -m'
 alias gd='git diff'
 alias gl='git log'
 
+export PYTHONBREAKPOINT=ipdb.set_trace
 export PATH=$PATH:$HOME/.config/emacs/bin

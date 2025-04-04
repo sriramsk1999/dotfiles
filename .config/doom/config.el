@@ -165,6 +165,51 @@ Examples:
         `(+workspace-current-name))
   )
 
+;; Setting up gptel ....
+
+(setf (gptel-get-backend "ChatGPT") nil)
+
+;; Default model
+(setq
+ gptel-model   'grok-2-latest
+ gptel-backend
+ (gptel-make-openai "xAI"
+   :host "api.x.ai"
+   :key (getenv "XAI_API_KEY")
+   :endpoint "/v1/chat/completions"
+   :stream t
+   :models '(grok-2-latest)))
+
+;; gptel keybindings under the AI prefix (SPC a)
+;; Remove the existing binding for "SPC a" (embark-act)
+(map! :leader "a" nil)
+(map! :leader
+      (:prefix ("a" . "AI")
+       :desc "Open chat buffer"     "a" #'gptel
+       :desc "Send to AI"           "s" #'gptel-send
+       :desc "Rewrite with AI"      "r" #'gptel-rewrite
+       :desc "Abort response"      "x" #'gptel-abort
+       :desc "gptel menu"          "m" #'gptel-menu
+       :desc "Add context"          "c" #'gptel-add
+       :desc "Add context from file" "f" #'gptel-add-file
+       :desc "Clear context"        "C" #'gptel-context-remove-all))
+
+(setq gptel-directives
+      '((default . "## ML Research Assistant System Prompt
+
+You are assisting a computer vision and robotics ML researcher.
+
+- Assume intermediate ML knowledge and Python expertise
+- Provide concise, technically precise responses
+- Default to Python code examples
+- Brief explanations focusing on implementation
+- For Linux/shell commands, provide practical solutions with minimal explanation
+- Prioritize accuracy and directness
+- Don't over-explain established ML concepts
+- Recommend best approaches rather than listing all options
+- Focus on practical solutions for research contexts")))
+
+
 ;;######################################################
 
 ;; Whenever you reconfigure a package, make sure to wrap your config in an
