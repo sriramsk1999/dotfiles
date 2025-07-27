@@ -149,6 +149,10 @@ Examples:
 ;; Misc Configuration
 ;;######################################################
 
+(after! evil
+  (define-key evil-normal-state-map (kbd "<tab>") #'evil-toggle-fold)
+  (define-key evil-normal-state-map (kbd "TAB") #'evil-toggle-fold))
+
 (use-package! xclip
   :config
   (setq xclip-program "wl-copy")
@@ -165,20 +169,24 @@ Examples:
         `(+workspace-current-name))
   )
 
+(after! lsp-mode
+  (add-to-list 'lsp-file-watch-ignored-directories "[/\\\\]\\.pixi\\'"))
+;; In every project directory - ((nil . ((pyvenv-activate . "./.pixi/envs/default/"))))
+
 ;; Setting up gptel ....
 
 (setf (gptel-get-backend "ChatGPT") nil)
 
 ;; Default model
 (setq
- gptel-model   'grok-2-latest
+ gptel-model   'grok-4-0709
  gptel-backend
  (gptel-make-openai "xAI"
    :host "api.x.ai"
    :key (getenv "XAI_API_KEY")
    :endpoint "/v1/chat/completions"
    :stream t
-   :models '(grok-2-latest)))
+   :models '(grok-3-mini-fast-beta grok-3-fast-beta grok-4-0709)))
 
 ;; gptel keybindings under the AI prefix (SPC a)
 ;; Remove the existing binding for "SPC a" (embark-act)

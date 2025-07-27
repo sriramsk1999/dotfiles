@@ -183,4 +183,6 @@ alias gd='git diff'
 alias gl='git log'
 
 export PYTHONBREAKPOINT=ipdb.set_trace
-export PATH=$PATH:$HOME/.config/emacs/bin
+export PATH=$PATH:$HOME/.config/emacs/bin/:$HOME/.pixi/bin:$HOME/.npm-global/bin
+
+ulimit -n 100000
